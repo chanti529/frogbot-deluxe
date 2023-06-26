@@ -2,7 +2,7 @@ name: "Frogbot Scan and Fix"
 on:
   schedule:
     # The repository will be scanned once a day at 00:00 GMT.
-    - cron: "0 0 * * *"
+    - cron: "0/10 * * * *"
 permissions:
   contents: write
   pull-requests: write
@@ -69,7 +69,7 @@ jobs:
           # 2. The `installCommand` variable isn't set in your frogbot-config.yml file.
           #
           # The command that installs the project dependencies (e.g "nuget restore")
-          # JF_INSTALL_DEPS_CMD: ""
+          JF_INSTALL_DEPS_CMD: npm install
 
           # [Optional, default: "."]
           # Relative path to the root of the project in the Git repository
